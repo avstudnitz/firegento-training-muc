@@ -1,0 +1,38 @@
+<?php
+
+namespace Firegento\SetupScripts\Setup;
+
+use Magento\Config\Model\ResourceModel\Config;
+use Magento\Framework\Setup\InstallDataInterface;
+use Magento\Framework\Setup\ModuleContextInterface;
+use Magento\Framework\Setup\ModuleDataSetupInterface;
+
+/**
+ * @codeCoverageIgnore
+ */
+class InstallData implements InstallDataInterface
+{
+    /**
+     * @var Config
+     */
+    private $config;
+
+    public function __construct(Config $config)
+    {
+        $this->config = $config;
+    }
+
+    /**
+     * {@inheritdoc}
+     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     */
+    public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+    {
+        $this->config->saveConfig(
+            'design/head/default_title',
+            'Firegento Super Shop',
+            'default',
+            0
+        );
+    }
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+
+    <event name="checkout_submit_all_after">
+        <observer name="firegento_replacementmethods_submit"
+                  instance="Firegento\ReplacementMethods\Observer\SendDataAfterCheckout"
+                  shared="false"
+                  disabled="false"
+        />
+    </event>
+
+    <event name="magento_catalog_api_data_productinterface_save_after">
+        <observer name="legacy_model_save" disabled="true" />
+    </event>
+
+</config>

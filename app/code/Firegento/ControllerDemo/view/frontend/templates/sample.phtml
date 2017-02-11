@@ -1,0 +1,12 @@
+<?php /** @var \Firegento\ControllerDemo\Block\Sample $block */ ?>
+<pre>
+    <?php //print_r($block->getProduct()->debug()) ?>
+</pre>
+
+<?php foreach ($this->getProductCollection() as $product): ?>
+
+    <pre>
+    <?php print_r($product->debug()) ?>
+    </pre>
+
+<?php endforeach; ?>
